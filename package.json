@@ -1,0 +1,26 @@
+{
+  "name": "muni4u-back",
+  "version": "1.0.0",
+  "description": "This is the backend of our project MUNI4U. #express #SQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead10/muni4u-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead10/muni4u-back/issues"
+  },
+  "homepage": "https://github.com/WebAhead10/muni4u-back#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
