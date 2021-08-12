@@ -1,20 +1,7 @@
-BEGIN;
--- DROP TABLE IF EXISTS;
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    ID VARCHAR(255) NOT NULL,
-    fullname VARCHAR(255) NOT NULL,
-    phonenumber VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
-    
-);
+const pg = require("pg");
+const dotenv = require("dotenv");
+dotenv.config();
+const connectionString = process.env.DATABASE_URL
+const db = pg.pool({connectionString});
 
-CREATE TABLE requests (
-    id SERIAL PRIMARY KEY,
-    userid INTEGER REFERENCES users(ID),
-    subject VARCHAR (255) NOT NULL,
-    content VARCHAR (255) NOT NULL 
-);
-
-COMMIT;
+module.exports=(db);
