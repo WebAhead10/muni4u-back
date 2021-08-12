@@ -2,4 +2,9 @@ function get(req, res) {
     res.send("SignIn");
     
 }
-module.exports = ({get});
+function set(req, res) {
+
+    const data = req.body;
+    console.log(data);
+}
+module.exports = ({get, set});
