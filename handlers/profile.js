@@ -1,5 +1,4 @@
 function get(req, res) {
-    res.send("Profile");
     
 }
 function set(req, res) {

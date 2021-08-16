@@ -1,18 +1,18 @@
 BEGIN;
--- DROP TABLE IF EXISTS;
+DROP TABLE IF EXIST users requests;
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    ID VARCHAR(255) NOT NULL,
-    fullname VARCHAR(255) NOT NULL,
-    phonenumber VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
+    id  PRIMARY KEY,
+    fullname VARCHAR(15) NOT NULL,
+    phone VARCHAR (10) NOT NULL,
+    email VARCHAR (255) NOT NULL,
+    user_password VARCHAR (255) NOT NULL,
+    home_address VARCHAR (255) NOT NULL
     
 );
 
 CREATE TABLE requests (
     id SERIAL PRIMARY KEY,
-    userid INTEGER REFERENCES users(ID),
+    userid INTEGER REFERENCES users(id),
     subject VARCHAR (255) NOT NULL,
     content VARCHAR (255) NOT NULL 
 );
