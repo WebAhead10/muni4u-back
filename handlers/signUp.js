@@ -1,5 +1,11 @@
-function get(req, res) {
+function get(req, res) { //taking data
     res.send("SignUp");
     
 }
-module.exports = ({get});
+
+function set(req, res) {
+    const data = req.body;
+    console.log(data);
+    
+}
+module.exports = ({get, set});

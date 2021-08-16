@@ -11,8 +11,16 @@ router.get("/", (req, res) => {
     res.send("Hi Adan");
 });
 router.get("/signIn", signIn.get);
+router.post("/signIn", signIn.set);
+
 router.get("/signUp", signUp.get);
+router.post("/signUp", signUp.set);
+
 router.get("/request", request.get);
+router.post("/request", request.set);
+
 router.get("/profile", profile.get);
+router.post("/profile", profile.set);
+
 
 module.exports = (router);
