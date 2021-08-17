@@ -1,14 +1,15 @@
 BEGIN;
-DROP TABLE IF EXIST users requests;
+DROP TABLE IF EXISTS users ,requests;
 CREATE TABLE users (
-    id  PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
+    haweye VARCHAR(15) NOT NULL,
     fullname VARCHAR(15) NOT NULL,
     phone VARCHAR (10) NOT NULL,
     email VARCHAR (255) NOT NULL,
-    user_password VARCHAR (255) NOT NULL,
-    home_address VARCHAR (255) NOT NULL
-    
-);
+    password VARCHAR (255) NOT NULL,
+    address VARCHAR (255) NOT NULL,
+    pass2 VARCHAR (255) NOT NULL
+); 
 
 
 

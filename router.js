@@ -5,22 +5,24 @@ const signIn = require("./handlers/signIn");
 const request = require("./handlers/request");
 const profile = require("./handlers/profile");
 
-
-
 router.get("/", (req, res) => {
-    res.send("Hi Adan");
+  res.send("Hi Adan");
 });
 router.get("/signIn", signIn.get);
 router.post("/signIn", signIn.set);
 
 router.get("/signUp", signUp.get);
-router.post("/signUp", signUp.set);
+router.post("/signUp", signUp.createUser);
+// router.post("/signUp", function (req, res) {
+//   signUp.creatUser;
+// });
 
-router.get("/request", request.get);
-router.post("/request", request.set);
+// router.get("/request", request.get);
+router.post("/request", function (req, res) {
+  request.creatReq;
+});
 
 router.get("/profile", profile.get);
 router.post("/profile", profile.set);
 
-
-module.exports = (router);
+module.exports = router;

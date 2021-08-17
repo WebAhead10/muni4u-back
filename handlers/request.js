@@ -1,11 +1,11 @@
 const db = require("../database/connect");
 const path = require("path");
 //we have to use the path
-function get(req, res) { 
-    // טעינת הדף מ REACT ?
-    //res.send("Request");
+// function get(req, res) { 
+//     // טעינת הדף מ REACT ?
+//     //res.send("Request");
     
-}
+// }
 // This function insert the request's data into the requests table in db
 function createReq(req, res) { 
     const data = req.body;
@@ -32,4 +32,4 @@ function createReq(req, res) {
 
     
 }
-module.exports = ({get, createReq});
+module.exports = {createReq};
