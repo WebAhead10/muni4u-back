@@ -1,3 +1,6 @@
+const db = require("../database/connect");
+const path = require("path");
+
 function get(req, res) {
     res.send("SignIn");
     

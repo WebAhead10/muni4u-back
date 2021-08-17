@@ -10,11 +10,16 @@ CREATE TABLE users (
     
 );
 
+
+
 CREATE TABLE requests (
-    id SERIAL PRIMARY KEY,
-    userid INTEGER REFERENCES users(id),
-    subject VARCHAR (255) NOT NULL,
-    content VARCHAR (255) NOT NULL 
+    id_req SERIAL PRIMARY KEY,
+    id_user INTEGER REFERENCES users(id),
+    fullname VARCHAR (255) NOT NULL,
+    req_subject VARCHAR (255) NOT NULL,
+    req_content VARCHAR (255) NOT NULL 
 );
+
+
 
 COMMIT;
