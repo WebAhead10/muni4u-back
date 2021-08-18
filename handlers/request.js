@@ -1,35 +1,26 @@
 const db = require("../database/connect");
-const path = require("path");
-//we have to use the path
-// function get(req, res) { 
-//     // טעינת הדף מ REACT ?
-//     //res.send("Request");
-    
-// }
+
+function get(req, res) {
+  res.send("Request");
+}
+
 // This function insert the request's data into the requests table in db
-function createReq(req, res) { 
-    const data = req.body;
-    const values = [
-        data.id_req,
-        data.id_user,
-        data.fullname,
-        data.req_subject,
-        data.req_content,
-      ];
-    console.log(data);
-    // add if statment to check if the user exists in db
-    db.query("INSERT INTO requests(id_req,id_user,fullname,req_subject,req_content) VALUES($1, $2, $3, $4, $5)", values)
+function createReq(req, res) {
+  const data = req.body;
+  const values = [data.haweye, data.fullname, data.sub, data.content];
+  console.log(data);
+
+  db.query(
+    "INSERT INTO requests(haweye,fullname,sub,content) VALUES($1, $2, $3, $4)",
+    values
+  )
     .then(() => {
-        res.redirect("/lastPage")
+      res.status(201).send("Thank you for contacting us!");
     })
 
     .catch((error) => {
       console.log(error);
-     res
-    .status(500)
-    .send(`<h1>Something went wrong saving your request</h1>`);
-});
-
-    
+      res.status(500).send(`<h1>Something went wrong saving your request</h1>`);
+    });
 }
-module.exports = {createReq};
+module.exports = { get, createReq };

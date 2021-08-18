@@ -14,10 +14,8 @@ router.post("/signIn", signIn.set);
 router.get("/signUp", signUp.get);
 router.post("/signUp", signUp.createUser);
 
-// router.get("/request", request.get);
-router.post("/request", function (req, res) {
-  request.creatReq;
-});
+router.get("/request", request.get);
+router.post("/request", request.createReq);
 
 router.get("/profile", profile.get);
 router.post("/profile", profile.set);
