@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   res.send("Hi Adan");
 });
 router.get("/signIn", signIn.get);
-router.post("/signIn", signIn.set);
+router.post("/signIn", signIn.SignIn);
 
 router.get("/signUp", signUp.get);
 router.post("/signUp", signUp.createUser);

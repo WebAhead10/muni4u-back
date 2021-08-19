@@ -6,7 +6,7 @@ CREATE TABLE users (
     phone VARCHAR (10) NOT NULL,
     email VARCHAR (255) NOT NULL,
     address VARCHAR (255) NOT NULL,
-    pass1 VARCHAR (255) NOT NULL
+    password VARCHAR (255) NOT NULL
 ); 
 
 CREATE TABLE requests(
