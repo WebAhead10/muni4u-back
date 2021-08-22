@@ -15,12 +15,12 @@ function createReq(req, res) {
     values
   )
     .then(() => {
-      res.status(201).send("Thank you for contacting us!");
+      res.send({success:true});
     })
 
     .catch((error) => {
       console.log(error);
-      res.status(500).send(`<h1>Something went wrong saving your request</h1>`);
+      res.send({success:true});
     });
 }
 module.exports = { get, createReq };

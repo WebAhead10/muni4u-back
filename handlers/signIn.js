@@ -6,18 +6,18 @@ function get(req, res) {
 
 function SignIn(req, res) {
   const data = req.body;
-
-  // Checking if the id and the password is correct
+  // must be check if requst from my front-end
+  console.log(req.get("host"));
   db.query(`SELECT * FROM users WHERE id=$1`, [data.id])
     .then((result) => {
       if (result.rows.length) {
         if (result.rows[0].password === data.password) {
-          res.send("success");
+          res.send(result.rows);
         } else {
-          res.send("Your password is wrong");
+          res.send({success:false});
         }
       } else {
-        res.send("Your ID is wrong");
+        res.send({success:false});
       }
     })
     .catch((error) => {

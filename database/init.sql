@@ -1,9 +1,11 @@
 BEGIN;
+
 DROP TABLE IF EXISTS users ,requests CASCADE;
+
 CREATE TABLE users (
-    id VARCHAR(20) PRIMARY KEY,
-    fullname VARCHAR(15) NOT NULL,
-    phone VARCHAR (10) NOT NULL,
+    id VARCHAR(255) PRIMARY KEY,
+    fullname VARCHAR(255) NOT NULL,
+    phone VARCHAR (255) NOT NULL,
     email VARCHAR (255) NOT NULL,
     address VARCHAR (255) NOT NULL,
     password VARCHAR (255) NOT NULL

@@ -6,7 +6,6 @@ function get(req, res) {
 
 // This function insert user's data into the users table in db
 function createUser(req, res) {
-  console.log("Hi");
   const data = req.body;
   const values = [
     data.id,
@@ -17,7 +16,6 @@ function createUser(req, res) {
     data.password,
   ];
   console.log(data);
-  // Checking if the user is already exist
   db.query(`SELECT * FROM users WHERE id=$1`, [data.id]).then((data) => {
     if (!data.rows.length) {
       db.query(
@@ -25,14 +23,14 @@ function createUser(req, res) {
         values
       )
         .then(() => {
-          res.status(201).send("Regestiration is done!");
+          res.send({success:true});
         })
 
         .catch((error) => {
           console.log(error);
         });
     } else {
-      res.send("You have been rejestered before, try to log in instaed");
+      res.send({success:false});
     }
   });
 }
