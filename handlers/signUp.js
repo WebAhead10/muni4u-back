@@ -8,21 +8,22 @@ function get(req, res) {
 function createUser(req, res) {
   const data = req.body;
   const values = [
-    data.id,
+    data.haweye,
     data.fullname,
     data.phone,
     data.email,
     data.address,
-    data.password,
+    data.pass1,
+    data.pass2
   ];
   console.log(data);
   db.query(`SELECT * FROM users WHERE id=$1`, [data.id]).then((data) => {
     if (!data.rows.length) {
       db.query(
-        "INSERT INTO users(id,fullname,phone,email,address,password) VALUES($1, $2, $3, $4, $5, $6)",
+        "INSERT INTO users(haweya,fullname,phone,email,address,password,pass2) VALUES($1, $2, $3, $4, $5, $6, $7)",
         values
       )
-        .then(() => {
+        .then((result) => {
           res.send({success:true});
         })
 

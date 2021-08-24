@@ -12,7 +12,7 @@ function SignIn(req, res) {
     .then((result) => {
       if (result.rows.length) {
         if (result.rows[0].password === data.password) {
-          res.send(result.rows);
+          res.send({success:true, data:result.rows});
         } else {
           res.send({success:false});
         }
