@@ -7,22 +7,22 @@ const cookie = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const port = process.env.PORT || 4000;
 
-// app.use(cors("cors"));
-app.use(
-  cors({
-    origin: true,
-    optionsSuccessStatus: 200,
-    credentials: true,
-  })
-);
-app.options(
-  '*',
-  cors({
-    origin: true,
-    optionsSuccessStatus: 200,
-    credentials: true,
-  })
-);
+app.use(cors());
+// app.use(
+//   cors({
+//     origin: true,
+//     optionsSuccessStatus: 200,
+//     credentials: true,
+//   })
+// );
+// app.options(
+//   '*',
+//   cors({
+//     origin: true,
+//     optionsSuccessStatus: 200,
+//     credentials: true,
+//   })
+// );
 
 app.use(express.json());
 // app.use("jwt");
