@@ -8,10 +8,10 @@ function SignIn(req, res) {
   const data = req.body;
   // must be check if requst from my front-end
   console.log(req.get("host"));
-  db.query(`SELECT * FROM users WHERE id=$1`, [data.id])
+  db.query(`SELECT * FROM users WHERE haweya=$1`, [data.haweye])
     .then((result) => {
       if (result.rows.length) {
-        if (result.rows[0].password === data.password) {
+        if (result.rows[0].password === data.pass1) {
           res.send({success:true, data:result.rows});
         } else {
           res.send({success:false});
